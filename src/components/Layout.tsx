@@ -7,6 +7,9 @@ function Layout() {
   return (
     <>
       <NavBar />
+      <div className="text-center" id="general-title">
+        <h2>POKEDEX</h2>
+      </div>
       <div className="row" id="general">
         <div className="col-8" id="left-pannel">
           <LeftPannel />

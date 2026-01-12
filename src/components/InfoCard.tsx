@@ -44,42 +44,35 @@ function InfoCard({ props }: Props) {
 
 function Card(props: Props) {
   const info = props.props;
-  const [counter, setCounter] = useState(0);
-
-  // console.log(info);
-
-  const handleClick = () => {
-    setCounter(counter + 1);
-  };
+  const [isShiny, setIsShiny] = useState(false);
 
   return (
     <>
       <div className="card mb-3">
-        <p className="card-text">{counter}</p>
+        <button
+          className="btn btn-primary"
+          onClick={() => setIsShiny(!isShiny)}
+        >
+          Shiny
+        </button>
         <div className="text-center">
-          <SpriteRender
-            im1={info.sprites.front_default}
-            im2={info.sprites.back_default}
-          />
+          <img
+            src={
+              isShiny ? info.sprites.front_shiny : info.sprites.front_default
+            }
+            className="rounded mx-auto "
+          ></img>
+          <img
+            src={isShiny ? info.sprites.back_shiny : info.sprites.back_default}
+            className="rounded mx-auto "
+          ></img>
         </div>
         <div className="card-body text-center">
           <h5 className="card-title">{info.name}</h5>
           <p className="card-text">ID: {info.id}</p>
           <DropDown texto={"hola"} />
-          <a href="#" className="btn btn-primary" onClick={() => handleClick()}>
-            Gruñido
-          </a>
         </div>
       </div>
-    </>
-  );
-}
-
-function SpriteRender({ im1, im2 }: PropsSprite) {
-  return (
-    <>
-      <img src={im1} className="rounded mx-auto "></img>
-      <img src={im2} className="rounded mx-auto "></img>
     </>
   );
 }

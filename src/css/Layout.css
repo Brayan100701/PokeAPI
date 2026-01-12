@@ -2,8 +2,15 @@
   padding-top: 20px;
 }
 
+#general-title {
+  padding-top: 5%;
+  padding-bottom: 2%;
+  color: rgb(230, 233, 58);
+  background-color: rgb(117, 95, 63);
+}
+
 #right-pannel {
-  background-color: rgb(235, 173, 4);
+  background-color: #e4e4e4;
   height: 100vh;
   margin: 0;
   padding-right: 10px;
@@ -14,7 +21,6 @@
 
 #general {
   padding-left: 10px;
-  padding-top: 80px;
 }
 
 .card {

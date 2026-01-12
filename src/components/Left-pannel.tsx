@@ -1,8 +1,8 @@
 import RenderCard from "./RenderCard";
 
 function LeftPannel() {
-  const init = 315;
-  const fin = 400;
+  const init = 150;
+  const fin = 160;
   const rango = fin - init + 1;
   return (
     <>
