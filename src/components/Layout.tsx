@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import LeftPannel from "./Left-pannel";
-import RightPannel from "./Right-pannel";
+// import RightPannel from "./Right-pannel";
 import "../css/Layout.css";
 
 function Layout() {
@@ -12,7 +12,7 @@ function Layout() {
           <LeftPannel />
         </div>
         <div className="col-4" id="right-pannel">
-          <RightPannel />
+          {/* <RightPannel /> */}
         </div>
       </div>
     </>

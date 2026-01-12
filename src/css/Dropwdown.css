@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.dropdown:hover {
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  transform: translateY(0);
+}

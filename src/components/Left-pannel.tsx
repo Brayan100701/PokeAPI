@@ -1,18 +1,15 @@
-import InfoCard from "./InfoCard";
+import RenderCard from "./RenderCard";
 
 function LeftPannel() {
-  const pokemonos = [
-    "Bulbasaur",
-    "Charmander",
-    "Squirtle",
-    "Mudkip",
-    "Torchic",
-    "Treecko",
-  ];
+  const init = 315;
+  const fin = 400;
+  const rango = fin - init + 1;
   return (
     <>
       <div className="row overflow-auto">
-        <InfoCard pokelista={pokemonos} />
+        {Array.from(new Array(rango).keys()).map((e) => (
+          <RenderCard key={e} index={(e + init).toString()} />
+        ))}
       </div>
     </>
   );

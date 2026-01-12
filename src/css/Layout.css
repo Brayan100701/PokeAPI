@@ -3,7 +3,7 @@
 }
 
 #right-pannel {
-  background-color: #9d1;
+  background-color: rgb(235, 173, 4);
   height: 100vh;
   margin: 0;
   padding-right: 10px;
@@ -18,11 +18,18 @@
 }
 
 .card {
-  max-width: 45%;
+  max-width: 30%;
   margin-left: auto;
   margin-right: auto;
+  background-color: black;
+  color: white;
 }
 
 #right-pannel .card {
   width: 100%;
+}
+
+.text-center img {
+  min-width: 15vh;
+  height: auto;
 }
