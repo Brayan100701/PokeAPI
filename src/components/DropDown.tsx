@@ -8,7 +8,7 @@ function DropDown({ texto }: Props) {
   return (
     <>
       <div className="dropdown">
-        Movimientos
+        Juegos
         <ul className="dropdown-content">
           <li>a</li>
           <li>b</li>

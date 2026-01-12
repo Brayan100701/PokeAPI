@@ -1,6 +1,9 @@
+import { useState } from "react";
 import RenderCard from "./RenderCard";
 
 function LeftPannel() {
+  const [pokemonData, setPokemonData] = useState(null);
+
   const init = 150;
   const fin = 160;
   const rango = fin - init + 1;

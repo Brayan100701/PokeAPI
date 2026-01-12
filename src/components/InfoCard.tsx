@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import DropDown from "./DropDown";
 
 interface Props {
@@ -24,11 +24,6 @@ interface Props {
   };
 }
 
-interface PropsSprite {
-  im1?: string;
-  im2?: string;
-}
-
 function InfoCard({ props }: Props) {
   // console.log(props);
   return props ? (
@@ -37,15 +32,20 @@ function InfoCard({ props }: Props) {
     </>
   ) : (
     <>
-      <p>No hay elementos para mostrar</p>
+      <p>Cargando información...</p>
     </>
   );
 }
 
 function Card(props: Props) {
   const info = props.props;
+  // console.log(info);
   const [isShiny, setIsShiny] = useState(false);
+  const [test, setTest] = useState(false);
 
+  {
+    test === false && info.name !== "" ? setTest(true) : () => {};
+  }
   return (
     <>
       <div className="card mb-3">
@@ -53,7 +53,7 @@ function Card(props: Props) {
           className="btn btn-primary"
           onClick={() => setIsShiny(!isShiny)}
         >
-          Shiny
+          {isShiny ? "Mostrar normal" : "Mostrar Shiny"}
         </button>
         <div className="text-center">
           <img
@@ -68,8 +68,23 @@ function Card(props: Props) {
           ></img>
         </div>
         <div className="card-body text-center">
-          <h5 className="card-title">{info.name}</h5>
-          <p className="card-text">ID: {info.id}</p>
+          <div className="row">
+            <div className="col">
+              <h5 className="card-title">{info.name}</h5>
+            </div>
+            <div className="col">
+              <p className="card-text">ID: {info.id}</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <p className="card-text">Peso: {info.weight}Kg</p>
+            </div>
+            <div className="col">
+              <p className="card-text">Altura: {info.height}m</p>
+            </div>
+          </div>
+
           <DropDown texto={"hola"} />
         </div>
       </div>

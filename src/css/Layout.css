@@ -31,11 +31,16 @@
   color: white;
 }
 
+.card-text,
+.card-body h5 {
+  font-size: 1.5em;
+}
+
 #right-pannel .card {
   width: 100%;
 }
 
 .text-center img {
-  min-width: 15vh;
-  height: auto;
+  min-height: 18vh;
+  width: auto;
 }
