@@ -7,6 +7,7 @@ interface Props {
 function RenderCard({ index }: Props) {
   const API_URL = "https://pokeapi.co/api/v2/pokemon/";
   const data = Intermediate(API_URL + index);
+  // console.log(data.game_indices);
   return (
     <>
       <InfoCard props={data} />
@@ -19,10 +20,18 @@ function Intermediate(URL: string) {
     name: "",
     base_experience: "",
     cries: "",
-    game_indices: [""],
+    game_indices: [
+      {
+        version: { name: "" },
+      },
+    ],
     height: "",
     id: "",
-    types: [""],
+    types: [
+      {
+        type: { name: "" },
+      },
+    ],
     weight: "",
     sprites: {},
   };
@@ -47,6 +56,7 @@ function Intermediate(URL: string) {
       front_shiny_female: e.sprites.front_shiny_female,
     };
   });
+
   return data;
 }
 

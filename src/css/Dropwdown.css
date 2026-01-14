@@ -1,22 +1,10 @@
-ul {
-  list-style-type: none;
+.accordion {
+  margin-top: 1em;
 }
 
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  width: 100%;
-  background-color: aquamarine;
-}
-
-.dropdown:hover {
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-  transform: translateY(0);
+.accordion-button {
+  color: bisque;
+  border-color: rgb(8, 37, 41);
+  background-color: rgb(8, 37, 41);
+  border-color: aqua;
 }
