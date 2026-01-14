@@ -28,11 +28,12 @@
   right: 0;
 }
 
-#general-title {
-}
-
 #general {
   padding-left: 10px;
+}
+
+.searchRow {
+  margin-bottom: 1em;
 }
 
 .card {
