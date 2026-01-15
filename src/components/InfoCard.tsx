@@ -3,30 +3,7 @@ import { useState } from "react";
 import "../css/Types.css";
 
 interface Props {
-  props: {
-    name: string;
-    base_experience: string;
-    cries: string;
-    game_indices: {
-      version: { name: string };
-    }[];
-    height: string;
-    id: string;
-    types: {
-      type: { name: string };
-    }[];
-    weight: string;
-    sprites: {
-      back_default?: string;
-      back_female?: string;
-      back_shiny?: string;
-      back_shiny_female?: string;
-      front_default?: string;
-      front_female?: string;
-      front_shiny?: string;
-      front_shiny_female?: string;
-    };
-  };
+  props: any;
 }
 
 function InfoCard({ props }: Props) {
@@ -49,7 +26,7 @@ function Card(props: Props) {
       <div className="col mb-4">
         <div className="card mb-3">
           <div className="row">
-            {info.types.map((e, index) => (
+            {info.types.map((e: any, index: any) => (
               <Types key={index} type={e.type.name} />
             ))}
           </div>

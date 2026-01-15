@@ -2,14 +2,19 @@ import { useState } from "react";
 import RenderCard from "./RenderCard";
 
 function RightPannel() {
-  const [renderValue, setRendervalue] = useState("1");
+  const [renderValue, setRendervalue] = useState({
+    box: "1",
+    reference: "Busqueda",
+  });
 
   function handleSubmitRight() {
-    // e.preventDefault();
     const input = document.getElementById(
       "RightSearchBy"
     ) as HTMLInputElement | null;
-    setRendervalue(input ? input.value : "");
+    setRendervalue({
+      box: input ? input.value : "",
+      reference: "Busqueda" + input?.value,
+    });
   }
 
   return (
@@ -33,7 +38,7 @@ function RightPannel() {
           </button>
         </div>
       </div>
-      <RenderCard index={renderValue} />
+      <RenderCard key={renderValue.reference} index={renderValue.box} />
     </>
   );
 }
