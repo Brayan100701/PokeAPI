@@ -93,7 +93,6 @@ interface PropsPlaceT {
 }
 
 function PlaceRow({ index, fin }: PropsPlaceT) {
-  console.log(index);
   return (
     <>
       <div className="row">
