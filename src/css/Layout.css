@@ -70,3 +70,10 @@
 #busqueda {
   margin-bottom: 1em;
 }
+
+#pendejo,
+#imbecil {
+  padding-left: 1em;
+  color: rgb(82, 26, 236);
+  font-weight: bolder;
+}

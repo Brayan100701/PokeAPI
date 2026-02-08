@@ -9,16 +9,25 @@ function RightPannel() {
 
   function handleSubmitRight() {
     const input = document.getElementById(
-      "RightSearchBy"
+      "RightSearchBy",
     ) as HTMLInputElement | null;
-    setRendervalue({
-      box: input ? input.value : "",
-      reference: "Busqueda" + input?.value,
-    });
+    const pendejo = document.getElementById("pendejo") as HTMLLabelElement;
+    const id = parseInt(input ? input.value : "");
+
+    if (id > 0 && id < 1026) {
+      pendejo.innerText = "";
+      setRendervalue({
+        box: input ? input.value : "",
+        reference: "Busqueda" + input?.value,
+      });
+    } else {
+      pendejo.innerText = "No se puede realizar la búsqueda";
+    }
   }
 
   return (
     <>
+      <p>Búsqueda por ID único o Nombre</p>
       <div className="row searchRow">
         <div className="col-sm-8">
           <input
@@ -36,6 +45,7 @@ function RightPannel() {
           >
             Buscar
           </button>
+          <label id="pendejo"></label>
         </div>
       </div>
       <RenderCard key={renderValue.reference} index={renderValue.box} />

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import RenderCard from "./RenderCard";
-//CHECKPOINT DE QUE FUNCIONA
 
 function LeftPannel() {
   const [estructura, setEstructura] = useState({ init: 1, fin: 10 });
@@ -16,13 +15,20 @@ function LeftPannel() {
     const textTwo = document.getElementById(
       "leftSearchByTwo",
     ) as HTMLInputElement | null;
+    const imbecil = document.getElementById("imbecil") as HTMLLabelElement;
     try {
       const one = parseInt(textOne ? textOne.value : "1");
       const two = parseInt(textTwo ? textTwo.value : "1");
-      setEstructura({
-        init: one,
-        fin: two,
-      });
+
+      if (one > 0 && two > one && two < 1026) {
+        imbecil.innerText = "";
+        setEstructura({
+          init: one,
+          fin: two,
+        });
+      } else {
+        imbecil.innerText = "No se puede realizar la búsqueda";
+      }
     } catch (error) {
       alert("Piola");
     }
@@ -57,6 +63,7 @@ function LeftPannel() {
           >
             Buscar
           </button>
+          <label id="imbecil"></label>
         </div>
       </div>
       {Array.from(new Array(estructura.fin - estructura.init + 1).keys()).map(
