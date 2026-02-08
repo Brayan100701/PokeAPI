@@ -11,10 +11,10 @@ function LeftPannel() {
 
   function handleSubmitLeft() {
     const textOne = document.getElementById(
-      "leftSearchByOne"
+      "leftSearchByOne",
     ) as HTMLInputElement | null;
     const textTwo = document.getElementById(
-      "leftSearchByTwo"
+      "leftSearchByTwo",
     ) as HTMLInputElement | null;
     try {
       const one = parseInt(textOne ? textOne.value : "1");
@@ -60,14 +60,12 @@ function LeftPannel() {
         </div>
       </div>
       {Array.from(new Array(estructura.fin - estructura.init + 1).keys()).map(
-        (e) => (
-          <Aux
-            key={e}
-            index={e + estructura.init}
-            fin={estructura.fin}
-            init={estructura.init}
-          />
-        )
+        (e) =>
+          (e + 3) % 3 == 0 ? (
+            <Aux key={e} index={e + estructura.init} fin={estructura.fin} />
+          ) : (
+            <EmptyComp key={e} />
+          ),
       )}
     </>
   );
@@ -76,15 +74,10 @@ function LeftPannel() {
 interface PropsPlace {
   index: number;
   fin: number;
-  init: number;
 }
 
-function Aux({ index, fin, init }: PropsPlace) {
-  return (index + 2) % 3 === 0 || index === init ? (
-    <PlaceRow key={index} index={index} fin={fin} />
-  ) : (
-    <></>
-  );
+function Aux({ index, fin }: PropsPlace) {
+  return <PlaceRow key={index} index={index} fin={fin} />;
 }
 
 interface PropsPlaceT {
@@ -117,6 +110,10 @@ function AuxTwo({ index, fin, e }: PropsTwo) {
   ) : (
     <></>
   );
+}
+
+function EmptyComp() {
+  return <></>;
 }
 
 export default LeftPannel;
